@@ -247,7 +247,7 @@ class Docstring:
         self.obj = obj
         self.code_obj = self._to_original_callable(obj)
         self.raw_doc = obj.__doc__ or ""
-        self.clean_doc = pydoc.getdoc(obj)
+        self.clean_doc = pydoc.getdoc(self.code_obj)
         self.doc = NumpyDocString(self.clean_doc)
 
     def __len__(self):
